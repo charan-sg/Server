@@ -13,7 +13,9 @@ export class AppComponent {
   userModel = new User('','','', '','', '', undefined , undefined, '', '', '');
   submitted = false;
   errorMsg = '';
-  // submittedSuccessfully: boolean = false;
+  submit_form = "Form Submitted SuccessFully";
+  title_form = "REGISTRATION FORM";
+
 
   constructor(private _enrollmentService: EnrollmentService){}
   
@@ -25,7 +27,6 @@ export class AppComponent {
         next: (data: any) => console.log('Success', data),
         error: (error: any) => this.errorMsg = error.statusText
       });
-      // this.submittedSuccessfully = true;
 }
   OnCancel(){
     var conf= confirm("Data will lose. Really want to Cancel? ")

@@ -21,7 +21,12 @@
 
 <body>
   <div class="container">
-    <h1 class="header text-center mb-4">REGISTRATION FORM</h1>
+    <ng-template [ngIf]="!submitted && title_form">
+      <h1 class="header text-center mb-4">{{title_form}}</h1>
+    </ng-template>
+      <ng-template [ngIf]="submitted">
+        <h1 class="header text-center mb-4">{{submit_form}}</h1>
+      </ng-template>
       <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="OnSubmit()" novalidate>
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{errorMsg}}
@@ -54,7 +59,7 @@
       </div>
       <div class="col-sm-4">
         <label for="email" class="col-form-label">EMAIL ID</label>
-        <input type="email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" class="form-control input-box" name="email" [(ngModel)]="userModel.email">
+        <input type="email" name="email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" class="form-control input-box" [(ngModel)]="userModel.email">
         <small class="text-danger" [class.d-none]="email.valid || email.untouched">This field is Required</small>
       </div>
       <div class="col-sm-4">
@@ -108,6 +113,7 @@
         <button type="button" (click)="OnCancel()" class="btn btn-secondary ml-2">Cancel</button>
       </div>
     </div>
+
   </form>
 </div>
 </body>
