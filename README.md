@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+To Create a new Service File Run 'ng generate service <file_name>'
+
+To install the Express Framework run 'npm install --save express'
+
+To Create a Class run 'ng generate class <file_name>'
